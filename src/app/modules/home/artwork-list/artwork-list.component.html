@@ -1,0 +1,9 @@
+<app-artwork-filter></app-artwork-filter>
+<p-dataView [value]="(artworks$ | async)" layout="grid">
+    <ng-template let-artwork pTemplate="gridItem">
+        <div class="col-12 sm:col-6 lg:col-4 xl:col-3 p-2">
+            <app-artwork-card [artwork]="artwork"></app-artwork-card>
+        </div>
+    </ng-template>
+</p-dataView>
+<p-paginator #paginator [totalRecords]="(artworksPagination$ | async).total" [rows]="(artworksPagination$ | async).limit" (onPageChange)="onPageChange($event)"></p-paginator>

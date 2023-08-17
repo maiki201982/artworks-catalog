@@ -1,0 +1,19 @@
+.artwork-card {
+    background-color: antiquewhite;
+    height: 100%;
+    position: relative;
+    .artwork-card-header {
+        display: inline-block;
+        
+        b {
+            color: red;
+        }
+        
+    }
+    .p-card-content {
+        text-align: center;
+    }        
+}
+
+
+

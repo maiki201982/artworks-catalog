@@ -1,0 +1,20 @@
+<p-table [value]="players">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="team">Team <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="goals">Goals <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="championships">Championships <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="rating">Rating <p-sortIcon field="name"></p-sortIcon></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-player>
+        <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.team }}</td>
+            <td>{{ player.goals }}</td>
+            <td>{{ player.championships }}</td>
+            <td><p-rating [ngModel]="player.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+        </tr>
+    </ng-template>
+</p-table>

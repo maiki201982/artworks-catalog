@@ -1,0 +1,12 @@
+<p-card [subheader]="artwork?.artist_display" styleClass="artwork-card">
+    <ng-template pTemplate="header">
+        <div [innerHTML]="artwork?.title | searchBold:(search$ | async)" class="p-card-title artwork-card-header mt-2 ml-3"></div>
+    </ng-template>
+    <img appImageNotFound [notFoundUrl]="'./assets/image-not-found.png'" src="https://www.artic.edu/iiif/2/{{artwork?.image_id}}/full/200,/0/default.jpg"/>
+</p-card>
+
+
+
+
+
+

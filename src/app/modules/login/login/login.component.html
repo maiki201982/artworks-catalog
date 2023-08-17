@@ -1,0 +1,22 @@
+<div class="login">
+    <p-panel header="Login">
+        <form>
+            <div class="login-field">
+                <label class="mb-2">User Name</label>
+                <input type="text" pInputText class="form-control p-inputtext-lg" [formControl]="name" required/>
+                <div class="alert alert-danger" [hidden]="name.valid || name.pristine"> Name is required</div>
+            </div>
+            <div class="login-field mt-3">
+                <label class="mb-2">Password</label>
+                <p-password class="form-control p-inputtext-lg" [formControl]="pass" [feedback]="false" required/>
+                <div class="alert alert-danger" [hidden]="pass.valid || pass.pristine"> Password is required</div>
+            </div>
+            <button pButton label="Login" (click)="login()" class="mt-5"></button>
+        </form>
+        <div *ngIf="(actualUser$ | async)?.name && !(actualUser$ | async)?.token" class="login-error mt-2">Usuario o contraseña incorrectos</div>
+    </p-panel>
+</div>
+
+
+
+

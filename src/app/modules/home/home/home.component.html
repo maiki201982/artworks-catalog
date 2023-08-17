@@ -1,0 +1,13 @@
+<div class="header">
+    <button pButton label="Logout" (click)="logout()" class="header-logout mt-2 mr-5"></button>
+    <div class="header-user mr-5 mt-3">User: {{(user$ | async)?.name}}</div>
+    <a class="header-link ml-5 mr-5 mt-3" routerLink="/home">Home</a>
+    <a class="header-link mt-3" routerLink="random-table">Random Table</a>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+
+

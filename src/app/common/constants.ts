@@ -1,0 +1,1 @@
+export const ARTWORKS_MAIN_URL = 'https://api.artic.edu/api/v1/artworks';
