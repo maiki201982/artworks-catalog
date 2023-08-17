@@ -12,7 +12,7 @@ export class ArtworksService {
     
     getArtworks(search: string, page: number): Observable<ArtWorkState> {
         
-        let url = search !== '' ? `/search?query[term][title]=${search}&page=${page}&fields=id,title,image_id,artist_display` : `?page=${page}&fields=id,title,image_id,artist_display`;
+        let url = search !== '' ? `/search?query[match][title]=${search}&page=${page}&fields=id,title,image_id,artist_display&limit=12` : `?page=${page}&fields=id,title,image_id,artist_display`;
         
         return this.httpClient.get(url).pipe(map((results: any) => {
             return {

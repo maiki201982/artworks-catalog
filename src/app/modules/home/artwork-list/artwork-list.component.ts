@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Paginator } from 'primeng/paginator';
 import { Observable } from 'rxjs';
@@ -23,12 +23,16 @@ export class ArtworkListComponent implements OnInit {
   ngOnInit() {
     this.artworks$ = this.store.select(selectListArtWorks);
     this.artworksPagination$ = this.store.select(selectPaginationArtWorks);
-    this.store.dispatch(loadArtWorks({ text: '', page: 1 }));
     
     const search$ =  this.store.select(selectSearch);
     search$.subscribe(search => {
       this.search = search;
-      this.paginator.changePage(0);
+      if (this.paginator?.totalRecords !== 0) {
+        this.paginator.changePage(0);
+      }
+      else {
+        this.store.dispatch(loadArtWorks({ text: this.search, page: 1 }));
+      }
     })
   }
 
