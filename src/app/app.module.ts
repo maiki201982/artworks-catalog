@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { EnvironmentInjector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -12,6 +12,7 @@ import { ArtWorkEffects } from './state/effects/artwork.effects';
 import { UsersEffects } from './state/effects/users.effects';
 import { NotFoundModule } from './modules/not-found/not-found.module';
 import { UrlInterceptor } from './interceptors/url.interceptor';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UrlInterceptor } from './interceptors/url.interceptor';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([ArtWorkEffects, UsersEffects]),
     NotFoundModule
   ],

@@ -11,7 +11,6 @@ export const artworksReducer = createReducer(
     }),
 
     on(loadSearch, (state, { text }) => {
-        console.log('VBBBBBBB', text)
         return { ...state, search: text }
     })
 )
