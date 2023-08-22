@@ -4,6 +4,7 @@ import { CardModule } from 'primeng/card';
 import { PaginatorModule } from 'primeng/paginator';
 import { InputTextModule } from 'primeng/inputtext';
 import { DataViewModule } from 'primeng/dataview';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { RatingModule } from 'primeng/rating';
@@ -33,6 +34,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ButtonModule,
     RatingModule,
     TableModule,
+    ProgressSpinnerModule,
     SharedModule
   ],
   exports: [

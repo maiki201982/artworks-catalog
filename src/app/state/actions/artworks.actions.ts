@@ -15,3 +15,8 @@ export const loadSearch = createAction(
     '[ArtWorks List] Change Search',
     props<{ text: string }>()
 )
+
+export const changeLoading = createAction(
+    '[ArtWorks] Change Loading',
+    props<{ loading: boolean }>()
+)

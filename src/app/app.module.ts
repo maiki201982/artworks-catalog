@@ -13,6 +13,7 @@ import { UsersEffects } from './state/effects/users.effects';
 import { NotFoundModule } from './modules/not-found/not-found.module';
 import { UrlInterceptor } from './interceptors/url.interceptor';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: UrlInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoadingInterceptor,
     multi: true
   }],
   bootstrap: [AppComponent]

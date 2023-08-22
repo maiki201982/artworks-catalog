@@ -1,5 +1,6 @@
 <app-artwork-filter></app-artwork-filter>
-<p-dataView [value]="(artworks$ | async)" layout="grid">
+<p-progressSpinner *ngIf="loading$ | async"></p-progressSpinner>
+<p-dataView [value]="(artworks$ | async)" layout="grid" *ngIf="!(loading$ | async)">
     <ng-template let-artwork pTemplate="gridItem">
         <div class="col-12 sm:col-6 lg:col-4 xl:col-3 p-2">
             <app-artwork-card [artwork]="artwork"></app-artwork-card>

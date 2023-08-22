@@ -17,5 +17,6 @@ export interface ArtWork {
 export interface ArtWorkState {
     pagination: ArtWorkPagination,
     artworks: ArtWork[],
-    search: string
+    search: string,
+    loading?: boolean
 }

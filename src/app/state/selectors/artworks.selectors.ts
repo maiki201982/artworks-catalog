@@ -18,3 +18,8 @@ export const selectSearch = createSelector(
     selectArtworksFeature,
     (state: ArtWorkState) => state.search
 )
+
+export const selectLoading = createSelector(
+    selectArtworksFeature,
+    (state: ArtWorkState) => state.loading
+)

@@ -1,8 +1,8 @@
 import { createReducer, on } from "@ngrx/store";
 import { ArtWorkState } from "src/app/interfaces/artwork.interfaces";
-import { loadedArtWorks, loadSearch } from "../actions/artworks.actions";
+import { changeLoading, loadedArtWorks, loadSearch } from "../actions/artworks.actions";
 
-export const initialState: ArtWorkState = { search: '', pagination: { }, artworks: [] };
+export const initialState: ArtWorkState = { search: '', pagination: { }, artworks: [], loading: false };
 
 export const artworksReducer = createReducer(
     initialState,
@@ -12,5 +12,9 @@ export const artworksReducer = createReducer(
 
     on(loadSearch, (state, { text }) => {
         return { ...state, search: text }
-    })
+    }),
+
+    on(changeLoading, (state, { loading }) => {
+        return { ...state, loading }
+    }) 
 )
